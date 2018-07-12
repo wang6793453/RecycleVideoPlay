@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.VerticalViewPager;
 import com.swipemedia.R;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
 //USE MAX_INT FOT RECYCLEVIDEOPLAY
 public class MainActivity extends AppCompatActivity {
 
-    private ViewPager mViewPager;
+    private VerticalViewPager mViewPager;
     private MediaPagerAdapter mAdapter;
     private int MaxCount = 10;
     private List<String> urilist = new ArrayList<>();
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void initMainActivity() {
-        mViewPager = (ViewPager) findViewById(R.id.main_viewpager);
+        mViewPager = (VerticalViewPager) findViewById(R.id.main_viewpager);
         mAdapter = new MediaPagerAdapter();
         mViewPager.setAdapter(mAdapter);
     //    mViewPager.setPageTransformer(true, new DepthPageTransformer());
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //FIRST VIDEO PLAY
         mediaViewList.get(0).setFirstStart();
         mViewPager.
-                setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                setOnPageChangeListener(new VerticalViewPager.OnPageChangeListener() {
 
                     @Override
                     public void onPageSelected(int arg0) {
